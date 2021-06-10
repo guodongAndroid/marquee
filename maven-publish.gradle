@@ -1,0 +1,38 @@
+apply plugin: 'maven-publish'
+
+task androidJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+}
+
+task androidJavadocsJar(type: Jar) {
+    classifier = 'javadoc'
+    from androidJavadocs.destinationDir
+}
+
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                // 上传到jitpack不能使用自定义的groupId
+                /*groupId = project.GROUP_ID
+                artifactId = project.ARTIFACT_ID
+                version = project.VERSION*/
+                from components.release
+                artifact androidSourcesJar
+                artifact androidJavadocsJar
+            }
+        }
+
+        repositories {
+            maven {
+                name = "Local"
+                url = "${buildDir}${File.separator}repo"
+            }
+        }
+    }
+}

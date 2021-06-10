@@ -1,0 +1,5 @@
+rootProject.name = "MarqueeTextView"
+include ':app-androidx'
+include ':androidx'
+include ':support'
+include ':app-support'
