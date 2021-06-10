@@ -26,10 +26,10 @@ allprojects {
 ```groovy
 dependencies {
     // androidx
-    implementation 'com.github.guodongAndroid.marquee:androidx:0.0.1'
+    implementation 'com.github.guodongAndroid.marquee:androidx:0.0.3'
     
     // support
-    implementation 'com.github.guodongAndroid.marquee:support:0.0.1'
+    implementation 'com.github.guodongAndroid.marquee:support:0.0.3'
 }
 ```
 
