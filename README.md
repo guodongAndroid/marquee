@@ -1,3 +1,5 @@
+# 此项目已迁移至[Widgets](https://github.com/guodongAndroid/widgets.git)，后期不再维护。
+
 # MarqueeTextView
 
 [![](https://jitpack.io/v/guodongAndroid/marquee.svg)](https://jitpack.io/#guodongAndroid/marquee)
